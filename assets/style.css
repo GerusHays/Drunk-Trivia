@@ -42,6 +42,12 @@ section div h2 {
     display: none;
     justify-content: space-between;
 }
+.category-section {
+    display: none;
+}
+.question-section {
+    display: none;
+}
 
 /* Button Styling */
 .button {
