@@ -1,0 +1,67 @@
+html {
+    color: white;
+    background-color: #026D77;
+}
+header {
+    display: flex;
+    justify-content: center;
+}
+header h1 {
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    border-bottom: 1px solid black;
+    width: 50%;
+}
+#age-verify-box {
+    display: flex;
+    height: 60vh;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.verification-form {
+    text-align: center;
+    font-size: 30px;
+    height: 250px;
+    width: 500px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border-radius: 25px;
+}
+.submit-btn-yes {
+
+    font-size: 15px;
+    color: white;
+    border-radius: 15px;
+    background-color: #15cc29;
+    height: 50px;
+    width: 100px;
+    text-decoration: none;
+    border: none;
+}
+.submit-btn-no {
+    font-size: 15px;
+    border: none;
+    color: white;
+    border-radius: 15px;
+    background-color: #cc1616;
+    height: 50px;
+    width: 200px;
+}
+
+/* Adding hover colors to the Yes and No buttons*/
+.submit-btn-yes:hover {
+    background-color: White;
+    color: #15cc29;
+    font-weight: bolder;
+    border: 2px solid #15cc29;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
+
+.submit-btn-no:hover {
+    background-color: white;
+    color: #cc1616;
+    font-weight: bolder;
+    border: 2px solid #cc1616;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
