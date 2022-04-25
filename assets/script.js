@@ -8,6 +8,7 @@ var drinkDisplay = document.querySelector("#drink-name")
 var generateDrink = document.querySelector("#generate-drink")
 var drinkInfo = document.querySelector("#drink-info")
 
+// This function will display the next info / button and make previous info / button disapear upon clicking
 function displayDrink () {
   drinkInfo.style.display = "inline";
   getCocktail.style.display = "none";
@@ -17,6 +18,7 @@ setTimeout( function displayButton () {
  makeCocktail.style.display = "inline";
  getTrivia.style.display = "inline";
 }, 1100);
+
 
 function getApi() { 
     var cocktailUrl = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
