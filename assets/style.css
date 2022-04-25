@@ -1,0 +1,72 @@
+:root {
+    --primary-color: #026d77;
+    --secondary-color: #230212;
+    --teritary-color: #4b0728;
+    --color: white;
+}
+* {
+    text-shadow: 2px 2px 5px black;
+
+}
+
+/* Header Styling */
+.header-style {
+    color: var(--secondary-color);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 50px;
+    font-weight: 100;
+}
+a {
+    text-decoration: none;
+    color: var(--color);
+    text-shadow: 2px 2px 5px black;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-shadow: 2px 2px 5px black;
+}
+section div {
+    justify-content: center;
+    text-align: center;
+    margin-top: 100px;
+}
+section div h2 {
+    font-size: 50px;
+}
+.drink-info {
+    display: none;
+    justify-content: space-between;
+}
+
+/* Button Styling */
+.button {
+    border: none;
+    background-color: var(--teritary-color);
+    color: var(--color);
+    height: 100px;
+    width: 250px;
+    border-radius: 15px;
+    font-size: 30px;
+    box-shadow: 2px 2px 5px black;
+}
+.trivia-btn {
+    display: none;
+    margin-right: 5px;
+}
+.cocktail-make-btn {
+    display: none;
+    margin-left: 5px;
+}
+button:hover {
+    cursor: pointer;
+    text-shadow: none;
+}
+.button:hover {
+    color: var(--secondary-color);
+    background-color: var(--color);
+    font-weight: bold;
+}

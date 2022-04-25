@@ -3,7 +3,21 @@
 
 var getCocktail = document.querySelector("#cocktail-generate-btn");
 var makeCocktail = document.querySelector("#cocktail-make-btn");
+var getTrivia = document.querySelector("#trivia-btn")
 var drinkDisplay = document.querySelector("#drink-name")
+var generateDrink = document.querySelector("#generate-drink")
+var drinkInfo = document.querySelector("#drink-info")
+
+function displayDrink () {
+  drinkInfo.style.display = "inline";
+  getCocktail.style.display = "none";
+  generateDrink.style.display = "none";
+}
+setTimeout( function displayButton () {
+ makeCocktail.style.display = "inline";
+ getTrivia.style.display = "inline";
+}, 1100);
+
 function getApi() { 
     var cocktailUrl = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
     fetch(cocktailUrl)
