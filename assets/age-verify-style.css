@@ -48,3 +48,20 @@ header h1 {
     height: 50px;
     width: 200px;
 }
+
+/* Adding hover colors to the Yes and No buttons*/
+.submit-btn-yes:hover {
+    background-color: White;
+    color: #15cc29;
+    font-weight: bolder;
+    border: 2px solid #15cc29;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
+
+.submit-btn-no:hover {
+    background-color: white;
+    color: #cc1616;
+    font-weight: bolder;
+    border: 2px solid #cc1616;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
