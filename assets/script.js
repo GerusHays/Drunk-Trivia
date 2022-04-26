@@ -58,4 +58,3 @@ function getrecipeApi() {
 }
 getCocktail.addEventListener('click', getApi);
 
-
