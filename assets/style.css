@@ -6,7 +6,6 @@
 }
 * {
     text-shadow: 2px 2px 5px black;
-
 }
 
 /* Header Styling */
@@ -38,13 +37,16 @@ section div {
 section div h2 {
     font-size: 50px;
 }
+/* Drink Info Section */
 .drink-info {
     display: none;
     justify-content: space-between;
 }
+/* Category Section */
 .category-section {
     display: none;
 }
+/* Question Section */
 .question-section {
     display: none;
 }
