@@ -3,22 +3,22 @@
 
 var getCocktail = document.querySelector("#cocktail-generate-btn");
 var makeCocktail = document.querySelector("#cocktail-make-btn");
-var getTrivia = document.querySelector("#trivia-btn")
+var getQuestion = document.querySelector("#get-question-btn")
 var drinkDisplay = document.querySelector("#drink-name")
 var generateDrink = document.querySelector("#generate-drink")
 var drinkInfo = document.querySelector("#drink-info")
 
-// This function will display the next info / button and make previous info / button disapear upon clicking
+// This function will make the generate cocktail btn / generate drink statement disapear and will then display the randomly selected cocktail
 function displayDrink () {
-  drinkInfo.style.display = "inline";
   getCocktail.style.display = "none";
   generateDrink.style.display = "none";
+  drinkInfo.style.display = "inline";
 }
+// This function will display both the make cocktail and get question on a delay so the cocktail has time to load in
 setTimeout( function displayButton () {
  makeCocktail.style.display = "inline";
- getTrivia.style.display = "inline";
+ getQuestion.style.display = "inline";
 }, 1100);
-
 
 function getApi() { 
     var cocktailUrl = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
