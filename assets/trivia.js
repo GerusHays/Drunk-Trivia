@@ -20,6 +20,7 @@ setTimeout( function displayButton () {
  getQuestion.style.display = "inline";
 }, 1100);
 
+
 function getApi() { 
     var cocktailUrl = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
     fetch(cocktailUrl)
@@ -35,26 +36,8 @@ function getApi() {
   
           drinkDisplay.appendChild(listItem);
         }
-      });
-    
-}
-function getrecipeApi() {
-    var cocktailUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita";
-    fetch(cocktailUrl)
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(data) {
-          console.log(data.drinks[0].strDrink);
-        for (var i = 0; i < 1; i++) {   
-          var listItem = document.createElement('h2');
-  
-          listItem.textContent = data.drinks[0].strDrink;
-  
-          drinkDisplay.appendChild(listItem);
-        }
-      });
-    
+      }); 
 }
 getCocktail.addEventListener('click', getApi);
+
 

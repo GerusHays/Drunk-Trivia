@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Add online styles here -->
+    <link rel="stylesheet" href="./assets/style.css" />
+    <title>Drunk Trivia Home</title>
+    <link rel="stylesheet" href="./assets/age-verify-style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Drunk Trivia</title>
+</head>
+
+<body>
+    <header>
+            <h1><span class="header-style">||</span><a href="/"> Drunk Trivia </a><span class="header-style">||</span></h1>
+     </header>
+    <section>
+        <!-- Generate Drink Section -->
+        <div id="generate-drink" class="generate-drink">
+            <div>
+                <h2>Time to find out what you're drinking!</h2>
+            </div>
+            <div>
+                <button id="cocktail-generate-btn" class="cocktail-generate-btn button" onclick="displayDrink(), displayButton()">Get me drunk 🍺</button>
+            </div>
+        </div>
+
+
+        <!-- Generate Question and Recipe Section -->
+        <div id="drink-info" class="drink-info">
+            <div>
+                <h2 id="drink-name" class="drink-name"></h2>
+            </div>
+            <div class="button-holder">
+                <button id="get-question-btn" class="get-question-btn button">Get Question</button>
+                <button id="cocktail-make-btn" class="cocktail-make-btn button" onclick="getRecipeApi()">Let's make it 🍺</button>
+            </div>
+        </div>
+
+
+        <!-- Choose a Category Section -->
+        <div id="category-section" class="category-section">
+            <div>
+                <h2>Choose a Category</h2>
+            </div>
+            <div>
+                <button id="category-1-btn"></button>
+                <button id="category-2-btn"></button>
+                <button id="category-3-btn"></button>
+            </div>
+        </div>
+
+
+        <!-- Question Section -->
+        <div id="question-section" class="question-section">
+            <div>
+                <h2 id="question" class="question"></h2>
+            </div>
+            <div>
+                <button id="answer-1-btn"></button>
+                <button id="answer-2-btn"></button>
+                <button id="answer-3-btn"></button>
+                <button id="answer-4-btn"></button>
+            </div>
+            <!-- Next Question Button After Question is Answered -->
+            <div>
+                <button id="next-question-btn" class="next-question-btn"></button>
+            </div>
+        </div>
+
+
+    </section>
+     
+    <!-- add online scripts here -->
+    <script src="./assets/trivia.js"></script>
+    <script src="./assets/recipe.js"></script>
+    
+</body>
+
+</html>
