@@ -1,27 +1,47 @@
 // www.thecocktaildb.com/api/json/v1/1/random.php
 // www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita
-
 var getCocktail = document.querySelector("#cocktail-generate-btn");
-var makeCocktail = document.querySelector("#cocktail-make-btn");
-var getQuestion = document.querySelector("#get-question-btn")
-var drinkDisplay = document.querySelector("#drink-name")
-var generateDrink = document.querySelector("#generate-drink")
-var drinkInfo = document.querySelector("#drink-info")
-var recipeList = document.querySelector("#recipe-list")
+var newCocktail = document.querySelector("#new-cocktail-btn");
+var getTrivia = document.querySelector("#trivia-btn");
+var backToDrink = document.querySelector("#back-to-drink");
+var drinkDisplay = document.querySelector("#drink-name");
+var generateDrink = document.querySelector("#generate-drink");
+var drinkInfo = document.querySelector("#drink-info");
+var recipeList = document.querySelector("#recipe-list");
+var categorySection = document.querySelector("#category-section");
+var questionSection = document.querySelector("#question-section");
 var cocktailUrl;
-
 var randDrink;
-// This function will make the generate cocktail btn / generate drink statement disapear and will then display the randomly selected cocktail
+// This function is for the -Get Me Drunk- button and the -Back to Drink- buttons that will make the -generate cocktail btn- -generate drink statement- -category section- -question section- disapear and will then display the randomly selected cocktail
 function displayDrink() {
   getCocktail.style.display = "none";
   generateDrink.style.display = "none";
+  categorySection.style.display = "none";
+  questionSection.style.display = "none";
   drinkInfo.style.display = "inline";
-}
-// This function will display both the make cocktail and get question on a delay so the cocktail has time to load in
+};
+// This function is for the -Get Me Drunk- button that will display both the -New Cocktail- and -Get Trivia- buttons on a delay so the cocktail has time to load in
 setTimeout(function displayButton() {
-  makeCocktail.style.display = "inline";
-  getQuestion.style.display = "inline";
+  newCocktail.style.display = "inline";
+  getTrivia.style.display = "inline";
 }, 1100);
+// This function is for the -New Cocktail- button that resets the -Drink Info- and then invokes the getApi()nfunction again to get new -Drink Info-
+function getNewCocktail () {
+  drinkDisplay.textContent = "";
+  recipeList.textContent = "";
+  getApi();
+};
+// This function is for the -Trivia Time- button and -New Question- button that removes the -Drink Info- -Question Section- and displays the -Category Section-
+function chooseCategory () {
+  drinkInfo.style.display = "none";
+  questionSection.style.display = "none";
+  categorySection.style.display = "inline";
+};
+// This function is for the -Category- buttons that removes the -Category Section- and displays the -Question Section-
+function getQuestion () {
+  categorySection.style.display = "none";
+  questionSection.style.display = "flex";
+};
 
 function getApi() {
   cocktailUrl = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
@@ -34,16 +54,11 @@ function getApi() {
       randDrink = data.drinks[0].idDrink;
       console.log("this is your random drink: " + randDrink);
       for (var i = 0; i < 1; i++) {
-        var listItem = document.createElement('h2');
-
-        listItem.textContent = data.drinks[0].strDrink;
-
-        drinkDisplay.appendChild(listItem);
+        drinkDisplay.textContent = data.drinks[0].strDrink;
       }
-      getrecipeApi()
+      getrecipeApi();
     });
-
-}
+};
 function getrecipeApi() {
   console.log(cocktailUrl);
   fetch(cocktailUrl)
@@ -70,11 +85,8 @@ function getrecipeApi() {
           listItem.textContent = drinkStr;
           recipeList.appendChild(listItem);
         }
-      }
+      };
 
     });
-
-}
+};
 getCocktail.addEventListener('click', getApi);
-
-

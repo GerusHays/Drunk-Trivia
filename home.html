@@ -33,12 +33,12 @@
         <div id="drink-info" class="drink-info">
             <div>
                 <h2 id="drink-name" class="drink-name"></h2>
-                <ol id="recipe-list"></ol>
+                <ol id="recipe-list" class="recipe-list"></ol>
                 <p id="instructions"></p>
             </div>
             <div class="button-holder">
-                <button id="get-question-btn" class="get-question-btn button">Get Question</button>
-                <button id="cocktail-make-btn" class="cocktail-make-btn button">Let's make it 🍺</button>
+                <button id="trivia-btn" class="trivia-btn button" onclick="chooseCategory()">Trivia Time!</button>
+                <button id="new-cocktail-btn" class="new-cocktail-btn button" onclick="getNewCocktail()">New Cocktail</button>
             </div>
         </div>
 
@@ -49,9 +49,12 @@
                 <h2>Choose a Category</h2>
             </div>
             <div>
-                <button id="category-1-btn"></button>
-                <button id="category-2-btn"></button>
-                <button id="category-3-btn"></button>
+                <button id="category-1-btn" class="category-btn button" onclick="getQuestion()"></button>
+                <button id="category-2-btn" class="category-btn button" onclick="getQuestion()"></button>
+                <button id="category-3-btn" class="category-btn button" onclick="getQuestion()"></button>
+            </div>
+            <div>
+                <button id="back-to-drink" class="back-to-drink button other-button" onclick="displayDrink(), displayButton()">Back to Drink</button>
             </div>
         </div>
 
@@ -61,15 +64,16 @@
             <div>
                 <h2 id="question" class="question"></h2>
             </div>
-            <div>
-                <button id="answer-1-btn"></button>
-                <button id="answer-2-btn"></button>
-                <button id="answer-3-btn"></button>
-                <button id="answer-4-btn"></button>
+            <div class="answer-buttons">
+                <button id="answer-1-btn" class="answer-btn button"></button>
+                <button id="answer-2-btn" class="answer-btn button"></button>
+                <button id="answer-3-btn" class="answer-btn button"></button>
+                <button id="answer-4-btn" class="answer-btn button"></button>
             </div>
             <!-- Next Question Button After Question is Answered -->
             <div>
-                <button id="next-question-btn" class="next-question-btn"></button>
+                <button id="back-to-drink" class="back-to-drink button other-button" onclick="displayDrink(), displayButton()">Back to Drink</button>
+                <button id="next-question-btn" class="next-question-btn button other-button" onclick="chooseCategory()">Next Question</button>
             </div>
         </div>
 

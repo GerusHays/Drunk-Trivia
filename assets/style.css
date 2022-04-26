@@ -21,6 +21,27 @@ a {
     text-shadow: 2px 2px 5px black;
 }
 
+/* Button Styling */
+.button {
+    border: none;
+    background-color: var(--teritary-color);
+    color: var(--color);
+    height: 100px;
+    width: 250px;
+    border-radius: 15px;
+    font-size: 30px;
+    box-shadow: 2px 2px 5px black;
+    margin: 20px;
+}
+button:hover {
+    cursor: pointer;
+    text-shadow: none;
+}
+.button:hover {
+    color: var(--secondary-color);
+    background-color: var(--color);
+    font-weight: bold;
+}
 /* Section Styling */
 section {
     display: flex;
@@ -32,50 +53,60 @@ section {
 section div {
     justify-content: center;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 50px;
 }
-section div h2 {
+section h2 {
     font-size: 50px;
 }
 /* Drink Info Section */
 .drink-info {
     display: none;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.recipe-list {
+    font-size: 25px;
+    text-align: left;
+    list-style: circle;
+    margin-left: 100px;
+}
+.trivia-btn {
+    display: none;
+}
+.new-cocktail-btn {
+    display: none;
 }
 /* Category Section */
 .category-section {
     display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
+
 /* Question Section */
 .question-section {
     display: none;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 35%
 }
-
-/* Button Styling */
-.button {
-    border: none;
-    background-color: var(--teritary-color);
+.answer-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.other-button {
+    height: 75px;
+    width: 200px;
+    font-size: 20px;
+    background-color: var(--secondary-color);
     color: var(--color);
-    height: 100px;
-    width: 250px;
-    border-radius: 15px;
-    font-size: 30px;
-    box-shadow: 2px 2px 5px black;
 }
-.trivia-btn {
-    display: none;
-    margin-right: 5px;
-}
-.cocktail-make-btn {
-    display: none;
-    margin-left: 5px;
-}
-button:hover {
-    cursor: pointer;
-    text-shadow: none;
-}
-.button:hover {
-    color: var(--secondary-color);
+.other-button:hover {
     background-color: var(--color);
-    font-weight: bold;
+    color: var(--secondary-color);
 }
