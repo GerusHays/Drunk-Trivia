@@ -16,11 +16,11 @@ var vehicleQuestionButton = document.querySelector("#category-1-btn")
 
 // This function is for the -Get Me Drunk- button and the -Back to Drink- buttons that will make the -generate cocktail btn- -generate drink statement- -category section- -question section- disapear and will then display the randomly selected cocktail
 function displayDrink() {
-  // getCocktail.style.display = "none";
-  // generateDrink.style.display = "none";
-  // categorySection.style.display = "none";
-  // questionSection.style.display = "none";
-  // drinkInfo.style.display = "inline";
+  getCocktail.style.display = "none";
+  generateDrink.style.display = "none";
+  categorySection.style.display = "none";
+  questionSection.style.display = "none";
+  drinkInfo.style.display = "inline";
 };
 // This function is for the -Get Me Drunk- button that will display both the -New Cocktail- and -Get Trivia- buttons on a delay so the cocktail has time to load in
 setTimeout(function displayButton() {

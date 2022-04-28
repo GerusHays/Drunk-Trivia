@@ -47,7 +47,7 @@ function getVehicleQuestion() {
 
 vehicleQuestionButton.addEventListener('click', getVehicleQuestion);
 
-questionDisplay.textContent = localStorage.getItem("questionData")
+questionDisplay.textContent = localStorage.getItem("questionData");
 
 
 

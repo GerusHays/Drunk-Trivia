@@ -17,14 +17,21 @@
             <h1><span class="header-style">||</span><a href="/"> Drunk Trivia </a><span class="header-style">||</span></h1>
      </header>
     <section>
-        <!-- Generate Drink Section -->
-        <div id="generate-drink" class="generate-drink">
-            <div>
-                <h2>Time to find out what you're drinking!</h2>
+        <!-- Generate Drink Section/Intro section -->
+        <div id="generate-drink" class="generate-drink card-container">
+            <!-- Intro card with summary of game -->
+            <div class="landing-card">
+                <h2 class="card-content">Confused?</h2>
+                <p class="sum-text card-content">Well, let me explain. Drunk trivia is a drinking mini-game that proves you with a drink to make at the beginning of the game. After that, you will be given a
+                    series of questions if you get the question right then you will be rewarded with 100 points. If you get the question wrong then bottoms up (that means you drink).
+                   Now go ahead and see how good of a tipsy trivia master you are!</p>
             </div>
-            <div>
-                <button id="cocktail-generate-btn" class="cocktail-generate-btn button" onclick="displayDrink(), displayButton()">Get me drunk 🍺</button>
+            <!-- Continuation card to get you to the generate drink portion -->
+            <div class="landing-card">
+                <h2 class="card-content">Time to find out what you're drinking!</h2>
+                <button id="cocktail-generate-btn" class="cocktail-generate-btn button card-content" onclick="displayDrink(), displayButton()">Get me drunk 🍺</button>
             </div>
+
         </div>
 
 
