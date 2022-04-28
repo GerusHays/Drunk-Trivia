@@ -1,5 +1,3 @@
-// www.thecocktaildb.com/api/json/v1/1/random.php
-// www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita
 var getCocktail = document.querySelector("#cocktail-generate-btn");
 var newCocktail = document.querySelector("#new-cocktail-btn");
 var getTrivia = document.querySelector("#trivia-btn");
@@ -12,81 +10,71 @@ var categorySection = document.querySelector("#category-section");
 var questionSection = document.querySelector("#question-section");
 var cocktailUrl;
 var randDrink;
+var vehicleQuestionButton = document.querySelector("#category-1-btn")
 // This function is for the -Get Me Drunk- button and the -Back to Drink- buttons that will make the -generate cocktail btn- -generate drink statement- -category section- -question section- disapear and will then display the randomly selected cocktail
-function displayDrink() {
-  getCocktail.style.display = "none";
-  generateDrink.style.display = "none";
-  categorySection.style.display = "none";
-  questionSection.style.display = "none";
-  drinkInfo.style.display = "inline";
-};
-// This function is for the -Get Me Drunk- button that will display both the -New Cocktail- and -Get Trivia- buttons on a delay so the cocktail has time to load in
-setTimeout(function displayButton() {
-  newCocktail.style.display = "inline";
-  getTrivia.style.display = "inline";
-}, 1100);
-// This function is for the -New Cocktail- button that resets the -Drink Info- and then invokes the getApi()nfunction again to get new -Drink Info-
-function getNewCocktail () {
-  drinkDisplay.textContent = "";
-  recipeList.textContent = "";
-  getApi();
-};
+
+
 // This function is for the -Trivia Time- button and -New Question- button that removes the -Drink Info- -Question Section- and displays the -Category Section-
-function chooseCategory () {
+function chooseCategory() {
   drinkInfo.style.display = "none";
   questionSection.style.display = "none";
   categorySection.style.display = "inline";
 };
 // This function is for the -Category- buttons that removes the -Category Section- and displays the -Question Section-
-function getQuestion () {
+function getQuestion() {
   categorySection.style.display = "none";
   questionSection.style.display = "flex";
 };
 
-function getApi() {
-  cocktailUrl = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
-  fetch(cocktailUrl)
+function getVehicleQuestion() {
+  vehicleUrl = "https://opentdb.com/api.php?amount=2&category=28&type=multiple";
+  fetch(vehicleUrl)
     .then(function (response) {
       return response.json();
     })
-    .then(function (data) {
-      console.log(data.drinks[0].strDrink);
-      randDrink = data.drinks[0].idDrink;
-      console.log("this is your random drink: " + randDrink);
-      for (var i = 0; i < 1; i++) {
-        drinkDisplay.textContent = data.drinks[0].strDrink;
-      }
-      getrecipeApi();
-    });
+  var questionData = (data.results[0].question);
+  var correctAnswerData = (data.results[0].correct_answer);
+  var incorrectAnswerData = (data.results[0].incorrect_answers);
+  localStorage.setItem("question1", questionData);
+  localStorage.setItem("correctAnswer", correctAnswerData);
+  localStorage.setItem("incorrectAnswer", incorrectAnswerData);
 };
-function getrecipeApi() {
-  console.log(cocktailUrl);
-  fetch(cocktailUrl)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
 
-      for (let i = 1; i <= 15; i++) {
-        var drinkStr = "";
+vehicleQuestionButton.addEventListener('click', getVehicleQuestion);
 
-        var measure = "strMeasure" + i;
-        if (data.drinks[0][measure]) {
-          drinkStr = data.drinks[0][measure];
-        }
 
-        var ingredient = "strIngredient" + i;
-        if (data.drinks[0][ingredient]) {
-          drinkStr = drinkStr + " of " + data.drinks[0][ingredient];
-        }
 
-        if (data.drinks[0][measure] && data.drinks[0][ingredient]) {
-          var listItem = document.createElement('li');
-          listItem.textContent = drinkStr;
-          recipeList.appendChild(listItem);
-        }
-      };
 
-    });
-};
-getCocktail.addEventListener('click', getApi);
+  // function getSportsQuestion() {
+  //   cocktailUrl = "https://opentdb.com/api.php?amount=2&category=21";
+  //   fetch(cocktailUrl)
+  //     .then(function (response) {
+  //       return response.json();
+  //     })
+  //     .then(function (data) {
+  //       console.log(data.drinks[0].strDrink);
+  //       randDrink = data.drinks[0].idDrink;
+  //       console.log("this is your random drink: " + randDrink);
+  //       for (var i = 0; i < 1; i++) {
+  //         drinkDisplay.textContent = data.drinks[0].strDrink;
+  //       }
+  //       getrecipeApi();
+  //     });
+  // };
+  // function getPoliticsQuestion() {
+  //   cocktailUrl = "https://opentdb.com/api.php?amount=2&category=24";
+  //   fetch(cocktailUrl)
+  //     .then(function (response) {
+  //       return response.json();
+  //     })
+  //     .then(function (data) {
+  //       console.log(data.drinks[0].strDrink);
+  //       randDrink = data.drinks[0].idDrink;
+  //       console.log("this is your random drink: " + randDrink);
+  //       for (var i = 0; i < 1; i++) {
+  //         drinkDisplay.textContent = data.drinks[0].strDrink;
+  //       }
+  //       getrecipeApi();
+  //     });
+  // };
+

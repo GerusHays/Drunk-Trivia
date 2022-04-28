@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="./assets/style.css" />
     <title>Drunk Trivia Home</title>
     <link rel="stylesheet" href="./assets/age-verify-style.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Drunk Trivia</title>
 </head>
 
@@ -49,9 +48,9 @@
                 <h2>Choose a Category</h2>
             </div>
             <div>
-                <button id="category-1-btn" class="category-btn button" onclick="getQuestion()"></button>
-                <button id="category-2-btn" class="category-btn button" onclick="getQuestion()"></button>
-                <button id="category-3-btn" class="category-btn button" onclick="getQuestion()"></button>
+                <button id="category-1-btn" class="category-btn button" onclick="getVehicleQuestion()">Vehicle Questions</button>
+                <button id="category-2-btn" class="category-btn button" onclick="getSportsQuestions()">Sports Questions</button>
+                <button id="category-3-btn" class="category-btn button" onclick="getPoliticsQuestion()">Political Questions</button>
             </div>
             <div>
                 <button id="back-to-drink" class="back-to-drink button other-button" onclick="displayDrink(), displayButton()">Back to Drink</button>
@@ -59,29 +58,14 @@
         </div>
 
 
-        <!-- Question Section -->
-        <div id="question-section" class="question-section">
-            <div>
-                <h2 id="question" class="question"></h2>
-            </div>
-            <div class="answer-buttons">
-                <button id="answer-1-btn" class="answer-btn button"></button>
-                <button id="answer-2-btn" class="answer-btn button"></button>
-                <button id="answer-3-btn" class="answer-btn button"></button>
-                <button id="answer-4-btn" class="answer-btn button"></button>
-            </div>
-            <!-- Next Question Button After Question is Answered -->
-            <div>
-                <button id="back-to-drink" class="back-to-drink button other-button" onclick="displayDrink(), displayButton()">Back to Drink</button>
-                <button id="next-question-btn" class="next-question-btn button other-button" onclick="chooseCategory()">Next Question</button>
-            </div>
-        </div>
+        
 
 
     </section>
      
     <!-- add online scripts here -->
     <script src="./assets/trivia.js"></script>
+    <script src="./assets/recipe.js"></script>
     
 </body>
 
