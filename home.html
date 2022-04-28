@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Add online styles here -->
     <link rel="stylesheet" href="./assets/style.css" />
-    <title>Drunk Trivia Home</title>
     <link rel="stylesheet" href="./assets/age-verify-style.css" />
     <title>Drunk Trivia</title>
 </head>
@@ -29,24 +28,12 @@
             <!-- Continuation card to get you to the generate drink portion -->
             <div class="landing-card">
                 <h2 class="card-content">Time to find out what you're drinking!</h2>
-                <button id="cocktail-generate-btn" class="cocktail-generate-btn button card-content" onclick="displayDrink(), displayButton()">Get me drunk 🍺</button>
-            </div>
+                <!-- clicking button will take you to recipe tab -->
+                <a href="./recipe.html"><button id="cocktail-generate-btn" class="cocktail-generate-btn button card-content">Get me drunk 🍺</button></a>
+                </div>
 
         </div>
 
-
-        <!-- Generate Question and Recipe Section -->
-        <div id="drink-info" class="drink-info">
-            <div>
-                <h2 id="drink-name" class="drink-name"></h2>
-                <ol id="recipe-list" class="recipe-list"></ol>
-                <p id="instructions"></p>
-            </div>
-            <div class="button-holder">
-                <button id="trivia-btn" class="trivia-btn button" onclick="chooseCategory()">Trivia Time!</button>
-                <button id="new-cocktail-btn" class="new-cocktail-btn button" onclick="getNewCocktail()">New Cocktail</button>
-            </div>
-        </div>
 
 
         <!-- Choose a Category Section -->

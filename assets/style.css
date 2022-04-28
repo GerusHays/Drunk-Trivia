@@ -27,11 +27,11 @@ a {
     background-color: var(--teritary-color);
     color: var(--color);
     height: 100px;
-    width: 250px;
+    width: auto;
     border-radius: 15px;
     font-size: 30px;
     box-shadow: 2px 2px 5px black;
-    margin: 20px;
+    padding: 20px;
 }
 button:hover {
     cursor: pointer;
@@ -55,13 +55,9 @@ section div {
     text-align: center;
     margin-top: 50px;
 }
-section h2 {
+h2 {
     font-size: 50px;
 }
-/* Not sure why this would default to not showing
-.generate-drink {
-    display: none;
-}   */
 
 /* Drink Info Section */
 .card-container {
@@ -101,11 +97,28 @@ section h2 {
 
 }
 
+.drink-card {
+    width: 70%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border-radius: 25px;
+    margin: 2.5%;
+}
+
+.photo-card {
+    width: 20%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border-radius: 25px;
+    margin: 2.5%;
+}
+
+.drink-name {
+    font-size: 40px;
+    margin: 15px 0 0 0;
+}
+
 .drink-info {
-    display: none;
-    flex-wrap: wrap;
+    display: flex;
     justify-content: center;
-    align-items: center;
     text-align: center;
 }
 .recipe-list {
@@ -114,11 +127,33 @@ section h2 {
     list-style: circle;
     margin-left: 100px;
 }
+
+.recipe-list li {
+    margin: 10px 0;
+}
+
+.instructions {
+    padding-bottom: 15px;
+    font-size: 25px;
+    max-width: 90%;
+    display: inline-block;
+    justify-content: center;
+}
+
+.cocktail-photo {
+    width: 80%;
+    height: auto;
+    border: 2px solid #230212;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border-radius: 25px;
+    margin: 2.5%;
+}
+
 .trivia-btn {
-    display: none;
+    margin-bottom: 20px;
 }
 .new-cocktail-btn {
-    display: none;
+    margin-bottom: 20px;
 }
 /* Category Section */
 .category-section {

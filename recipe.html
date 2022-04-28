@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Add online styles here -->
+    <link rel="stylesheet" href="./assets/style.css" />
+    <title>Drunk Trivia Home</title>
+    <link rel="stylesheet" href="./assets/age-verify-style.css" />
+    <title>Drunk Trivia</title>
+</head>
+
+<body>
+    <header>
+        <h1><span class="header-style">||</span><a href="/"> Drunk Trivia </a><span class="header-style">||</span></h1>
+    </header>
+
+    <!-- Generate Question and Recipe Section -->
+    <div id="drink-info" class="drink-info">
+        <div class="drink-card">
+            <h2>Your Drink For This Round:</h2>
+            <h3 id="drink-name" class="drink-name"></h3>
+            <ol id="recipe-list" class="recipe-list">Ingredients:</ol>
+            <button id="new-cocktail-btn" class="new-cocktail-btn button" onclick="getNewRecipe()">New Cocktail</button>
+        </div>
+        <!-- card for image and next drink -->
+        <div class="photo-card" > 
+            <img src=" " class="cocktail-photo" id="cocktail-photo" alt="">  
+            <p id="instructions" class="instructions"></p>
+            <button id="trivia-btn" class="trivia-btn button" onclick="chooseCategory()">Trivia Time!</button>
+        </div>
+    </div>
+
+
+    <!-- add online scripts here -->
+    <script src="./assets/recipe.js"></script>
+</body>
