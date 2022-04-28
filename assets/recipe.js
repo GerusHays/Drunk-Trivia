@@ -14,7 +14,7 @@ var cocktailUrl;
 var randDrink;
 var vehicleQuestionButton = document.querySelector("#category-1-btn")
 
-
+// This function is for the -Get Me Drunk- button and the -Back to Drink- buttons that will make the -generate cocktail btn- -generate drink statement- -category section- -question section- disapear and will then display the randomly selected cocktail
 function displayDrink() {
   // getCocktail.style.display = "none";
   // generateDrink.style.display = "none";

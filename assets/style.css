@@ -58,6 +58,9 @@ section div {
 section h2 {
     font-size: 50px;
 }
+.generate-drink {
+    display: none;
+}
 /* Drink Info Section */
 .drink-info {
     display: none;
@@ -80,7 +83,7 @@ section h2 {
 }
 /* Category Section */
 .category-section {
-    display: none;
+    display: inline;
     justify-content: center;
     align-items: center;
     text-align: center;

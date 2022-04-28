@@ -10,9 +10,8 @@ var categorySection = document.querySelector("#category-section");
 var questionSection = document.querySelector("#question-section");
 var cocktailUrl;
 var randDrink;
-var vehicleQuestionButton = document.querySelector("#category-1-btn")
-// This function is for the -Get Me Drunk- button and the -Back to Drink- buttons that will make the -generate cocktail btn- -generate drink statement- -category section- -question section- disapear and will then display the randomly selected cocktail
-
+var vehicleQuestionButton = document.querySelector("#category-1-btn");
+var questionDisplay = document.querySelector("#question");
 
 // This function is for the -Trivia Time- button and -New Question- button that removes the -Drink Info- -Question Section- and displays the -Category Section-
 function chooseCategory() {
@@ -32,15 +31,23 @@ function getVehicleQuestion() {
     .then(function (response) {
       return response.json();
     })
-  var questionData = (data.results[0].question);
-  var correctAnswerData = (data.results[0].correct_answer);
-  var incorrectAnswerData = (data.results[0].incorrect_answers);
-  localStorage.setItem("question1", questionData);
-  localStorage.setItem("correctAnswer", correctAnswerData);
-  localStorage.setItem("incorrectAnswer", incorrectAnswerData);
+    .then(function (data) {
+            var questionData = (data.results[0].question);
+            console.log(data.results[0].question);
+            var correctAnswerData = (data.results[0].correct_answer);
+            var incorrectAnswerData = (data.results[0].incorrect_answers);
+            localStorage.setItem("question1", questionData);
+            localStorage.setItem("correctAnswer", correctAnswerData);
+            localStorage.setItem("incorrectAnswer", incorrectAnswerData);
+            
+            window.location = "./trivia.html";
+            
+      });
 };
 
 vehicleQuestionButton.addEventListener('click', getVehicleQuestion);
+
+questionDisplay.textContent = localStorage.getItem("questionData")
 
 
 
