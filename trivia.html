@@ -15,6 +15,23 @@
     <header>
         <h1><span class="header-style">||</span> Drunk Trivia <span class="header-style">||</span></h1>
     </header>
+    <!-- question section -->
+    <div>
+        <section class="stats-bar">
+            <!-- Display for the current subject -->
+            <div class="stats-card">
+                <h3>Placeholder Subject</h3>
+            </div>
+            <!-- Display for the current number of drinks taken -->
+            <div class="stats-card">
+                <h3>Drinks: </h3>
+            </div>
+            <!-- Display for the current score -->
+            <div class="stats-card">
+                <h3>Score: </h3>
+            </div>
+        </section> 
+
     <!-- category section -->
     <div class="categorys">
         <!-- Choose a Category Section -->
@@ -23,9 +40,9 @@
                 <h2>Choose a Category</h2>
             </div>
             <div>
-                <button id="category-1-btn" class="category-btn button" onclick="getVehicleQuestion()">Vehicle Questions</button>
-                <button id="category-2-btn" class="category-btn button" onclick="getSportsQuestions()">Sports Questions</button>
-                <button id="category-3-btn" class="category-btn button" onclick="getPoliticsQuestion()">Political Questions</button>
+                <button id="category-1-btn" class="category-btn button" onclick="getQuestions(0)">Vehicle Questions</button>
+                <button id="category-2-btn" class="category-btn button" onclick="getQuestions(1)">Sports Questions</button>
+                <button id="category-3-btn" class="category-btn button" onclick="getQuestions(2)">Political Questions</button>
             </div>
             <div>
                 <a href="./recipe.html"><button id="back-to-drink" class="back-to-drink button other-button">Back to Drink</button></a>
@@ -34,22 +51,7 @@
 
     </div>
 
-    <!-- question section -->
-    <div class="questions">
-    <section class="stats-bar">
-        <!-- Display for the current subject -->
-        <div class="stats-card">
-            <h3>Placeholder Subject</h3>
-        </div>
-        <!-- Display for the current number of drinks taken -->
-        <div class="stats-card">
-            <h3>Drinks: </h3>
-        </div>
-        <!-- Display for the current score -->
-        <div class="stats-card">
-            <h3>Score: </h3>
-        </div>
-    </section> 
+    
     <!-- Question Section -->
     <section>
         <div id="question-section" class="question-section">

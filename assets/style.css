@@ -168,10 +168,6 @@ h2 {
     display: inline-block;
 }
 
-.questions {
-    visibility: hidden;
-}
-
 .category-btn {
     margin: 5%;
 }
@@ -184,13 +180,21 @@ h2 {
     text-align: center;
 }
 
+.hidden {
+    visibility: hidden;  
+}
+
+.visible {
+    visibility: visible;
+}
+
 /* Question Section */
 .question-section {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    width: 35%
+    width: 35%;
 }
 .answer-buttons {
     display: flex;
