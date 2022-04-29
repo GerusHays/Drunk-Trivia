@@ -42,6 +42,7 @@ function getNewRecipe() {
       for (var i = 0; i < 1; i++) {
         drinkDisplay.textContent = data.drinks[0].strDrink;
       }
+      localStorage.setItem('drink-name', document.getElementById('drink-name').value);
       getrecipeApi();
       getInstruction();
       getImage();
@@ -81,9 +82,12 @@ function getImage() {
   drinkImg.setAttribute("src", currentDrink.drinks[0].strDrinkThumb);
 }
 
-function saveDrink() {
-  
-}
+// function saveDrink() {
+//   localStorage.setItem('drink-name', document.getElementById('drink-name').value);
+//   getrecipeApi();
+//   getInstruction();
+//   getImage();
+// }
 getNewRecipe();
 
 //getCocktail.addEventListener('click', getApi);
