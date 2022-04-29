@@ -81,6 +81,9 @@ function getImage() {
   drinkImg.setAttribute("src", currentDrink.drinks[0].strDrinkThumb);
 }
 
+function saveDrink() {
+  
+}
 getNewRecipe();
 
 //getCocktail.addEventListener('click', getApi);
