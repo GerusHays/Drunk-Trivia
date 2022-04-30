@@ -25,7 +25,7 @@ function displayDrink() {
   questionSection.style.display = "none";
   drinkInfo.style.display = "inline";
 };
-
+// generates a new recipe for the user
 function getNewRecipe() {
   drinkDisplay.textContent = "";
   recipeList.textContent = "";
@@ -42,6 +42,7 @@ function getNewRecipe() {
       for (var i = 0; i < 1; i++) {
         drinkDisplay.textContent = data.drinks[0].strDrink;
       }
+      // stores the drink variables
       localStorage.setItem('drink-name',currentDrink.drinks[0].strDrink);
       localStorage.setItem('instructions', currentDrink.drinks[0].strInstructions);
       localStorage.setItem('cocktail-photo', currentDrink.drinks[0].strDrinkThumb);
@@ -52,7 +53,7 @@ function getNewRecipe() {
     });
 };
 
-
+// function to get the ingredients of the user's beverage of choice
 function getrecipeApi() {
   var ingredients = [];
   for (let i = 1; i <= 15; i++) {
@@ -79,15 +80,15 @@ function getrecipeApi() {
   };
   localStorage.setItem('recipe-list', JSON.stringify(ingredients));
 };
-
+// function to get instructions on how to mix the user's drink of choice
 function getInstruction() {
   cocktailInstructions.textContent = currentDrink.drinks[0].strInstructions;
 }
-
+// function to generate image of the user's beverage of choice
 function getImage() {
   drinkImg.setAttribute("src", currentDrink.drinks[0].strDrinkThumb);
 }
-
+// function to save the previous drink when the user goes through the application and wants to see their drink 
   function getData() {
     var drinkName = localStorage.getItem('drink-name');
     var instructions = localStorage.getItem('instructions');

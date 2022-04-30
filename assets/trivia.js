@@ -1,3 +1,4 @@
+// global variables
 var getCocktail = document.querySelector("#cocktail-generate-btn");
 var newCocktail = document.querySelector("#new-cocktail-btn");
 var getTrivia = document.querySelector("#trivia-btn");
@@ -24,7 +25,7 @@ function getQuestion() {
   categorySection.style.display = "none";
   questionSection.style.display = "flex";
 };
-
+// function to generate questions based on the vehicle category
 function getVehicleQuestion() {
   vehicleUrl = "https://opentdb.com/api.php?amount=2&category=28&type=multiple";
   fetch(vehicleUrl)
