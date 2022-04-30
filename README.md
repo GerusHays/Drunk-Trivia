@@ -1,20 +1,29 @@
 # DRUNK TRIVIA
 ## Purpose
-The purpose of this webpage is to create a "normal work day schedule" spanning from 9AM - 5PM. </br>
-Upon opening the webpage the user is presented with the current day and 9 time block from 9-5pm in descending order. </br>
-The user may enter in the text area just right of whatever time period they want to enter in an event for that time. </br>
-Once they enter in the event in their selected timeblock they can select save so it wont go away if they were to close or refresh the webpage. 
-They will also be presented with a message towards the top of the webpage that their event is saved in the local storage. </br>
-The calendar also will display differently based on what time it is. If the current hour has passed then it will display gray. 
-If the time is present then it will display red for the time block and if it is in the future the time block will display green. </br>
-This calendar may be utilized for anyone with a busy day and needs a webpage to go to see what is up and coming or what has already passed.
-## Built With
+The purpose of this application is to develop a fun drinking trivia game with friends and family! </br>
+Upon opening the application the user will be presented with a prompt ensuring they are of legal drinking age within the United States of 21 years old. </br>
+If the user selects yes they will be directed to the webpage to be prompted with directions on how the application works and a button beside that to create a alcoholic beverage.</br>
+If the user selects no they will be redirected to a webpage on reddit talking about fake Id's.</br>
+Upon selecting yes and generating a drink the user will be shown a drink to include:
+- Name of the drink
+- Ingredients and measurements
+- Image of the drink
+- Instructions on how to prep / mix the drink </br>
+If the user does not like that drink they can select next cocktail to be presented with another random cocktail.</br>
+Once the user decided on a cocktail they can select the trivia button and will be taken to seperate page and be able to select from one of 3 categories. </br>
+- Sports
+- Vehicles
+- Politics </br>
+Upon selecting a category the user will be prompted with the question and 4 multiple choice answers to choose from. </br>
+Once they complete 5 questions they will be given a score of how they did and can go through another category and 5 more questions or go generate another drink. </br>
+
+## Created with 
 * HTML
 * CSS
 * JS
 
 ## Team cohesion
-- Our Team consists of the following Developers:
+### Our Team consists of the following Developers:
 - Gerus Hays [gitHublink](https://github.com/GerusHays)
 - Alex Standfield [gitHublink](https://github.com/AlexStandfield)
 - Kansas Carver [gitHublink](https://github.com/khcarver1)
@@ -24,6 +33,7 @@ This calendar may be utilized for anyone with a busy day and needs a webpage to 
 ## Moving Forward
 - We would like to implement team names into the application and to be able to see who has the highest scores of all time and win each round based on how many points they earn.
 - Moving forward we should consolidate everything into one html file and implement css and javascript to make different parts of the app appear when certain functions are ran.
+- Add a drop down to skim through drinks if the user knows what they want and wants to know how to make that specific drink instead of only generating a random one.
 - Improve the styling and the looks of the application to be more appealing. 
 
 ## Web link:
