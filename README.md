@@ -13,7 +13,7 @@ This calendar may be utilized for anyone with a busy day and needs a webpage to 
 * CSS
 * JS
 
-## Resources and Student cohesion
+## Resources and Team cohesion
 - https://www.geeksforgeeks.org/moment-js-moment-hour-method/ This weblink is where i got the function to check the current hour 
 - I worked with William Grout, Andrea Rowland, Morgan Goodsell, Hiro, Valeria Garcia and Alex Lathrop while perfecting the HTML and Javascript for this code.
 - We ended up using bits and pieces from eachothers code to make it our own. 
