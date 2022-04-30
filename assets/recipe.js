@@ -88,12 +88,6 @@ function getImage() {
   drinkImg.setAttribute("src", currentDrink.drinks[0].strDrinkThumb);
 }
 
-// function saveDrink() {
-//   localStorage.setItem('drink-name', document.getElementById('drink-name').value);
-//   getrecipeApi();
-//   getInstruction();
-//   getImage();
-// }
   function getData() {
     var drinkName = localStorage.getItem('drink-name');
     var instructions = localStorage.getItem('instructions');
