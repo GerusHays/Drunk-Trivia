@@ -22,10 +22,10 @@ This calendar may be utilized for anyone with a busy day and needs a webpage to 
 - I would like to add a calendar at the top to schedule things in the future as well
 
 ## Web link:
-- My [website](https://gerushays.github.io/Work-Scheduler/)
+- Project [website](https://gerushays.github.io/Drunk-Trivia/)
 
 ## Screenshot
-![Work-scheduler-screenshot](./Develop/images/Work-scheduler-screenshot.png)
+![Drunk-Trivia-screenshot](./assets/images/Drunk-Trivia-Screenshot.PNG)
 
 ## Contribution
 Made by Team: Don't Drink and Code
