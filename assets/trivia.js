@@ -37,9 +37,9 @@ function getQuestions(topic) {
 };
 
 function formatQuiz(params) {
-  questionSection.classList.add("visible");
+  questionSection.classList.remove("hidden");
   categorySection.classList.add("hidden");
-  statusBar.classList.add("visible");
+  statusBar.classList.remove("hidden");
   subject.textContent = "Current Category: " + questionData.results[0].category;
   drinks.textContent = "Drinks: "
   score.textContent = "Score: "
