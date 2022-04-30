@@ -181,11 +181,11 @@ h2 {
 }
 
 .hidden {
-    visibility: hidden;  
+    display: none;  
 }
 
 .visible {
-    visibility: visible;
+    display: flex;
 }
 
 /* Question Section */
@@ -194,8 +194,12 @@ h2 {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    width: 35%;
+    width: 95%;
 }
+.question {
+    text-align: center;
+}
+
 .answer-buttons {
     display: flex;
     flex-wrap: wrap;
@@ -211,4 +215,22 @@ h2 {
 .other-button:hover {
     background-color: var(--color);
     color: var(--secondary-color);
+}
+
+.correct {
+    background-color: #15cc29;
+}
+
+.correct:hover {
+    color: #15cc29;
+    border: 4px solid #15cc29;
+}
+
+.incorrect {
+    background-color: #cc1616;
+}
+
+.incorrect:hover {
+    color: #cc1616;
+    border: 4px solid #cc1616;
 }

@@ -17,18 +17,18 @@
     </header>
     <!-- question section -->
     <div>
-        <section class="stats-bar">
+        <section id="status-bar" class="stats-bar hidden">
             <!-- Display for the current subject -->
             <div class="stats-card">
-                <h3>Placeholder Subject</h3>
+                <h3 id="subject"></h3>
             </div>
             <!-- Display for the current number of drinks taken -->
             <div class="stats-card">
-                <h3>Drinks: </h3>
+                <h3 id="drinks">Are you Ready?</h3>
             </div>
             <!-- Display for the current score -->
             <div class="stats-card">
-                <h3>Score: </h3>
+                <h3 id="score"></h3>
             </div>
         </section> 
 
@@ -59,16 +59,15 @@
                 <h2 id="question" class="question"></h2>
             </div>
             <div class="answer-buttons">
-                <button id="answer-1-btn" class="answer-btn button"></button>
-                <button id="answer-2-btn" class="answer-btn button"></button>
-                <button id="answer-3-btn" class="answer-btn button"></button>
-                <button id="answer-4-btn" class="answer-btn button"></button>
+                <button id="answer-0-btn" class="answer-btn button" onclick="checkClickedButton(0);"></button>
+                <button id="answer-1-btn" class="answer-btn button" onclick="checkClickedButton(1);"></button>
+                <button id="answer-2-btn" class="answer-btn button" onclick="checkClickedButton(2);"></button>
+                <button id="answer-3-btn" class="answer-btn button" onclick="checkClickedButton(3);"></button>
             </div>
             <!-- Next Question Button After Question is Answered -->
             <div>
-                <button id="back-to-drink" class="back-to-drink button other-button"
-                    onclick="displayDrink(), displayButton()">Back to Drink</button>
-                <button id="next-question-btn" class="next-question-btn button other-button" onclick="chooseCategory()">Next
+                <button id="back-to-drink" class="back-to-drink button other-button">Back to Drink</button>
+                <button id="next-question-btn" class="next-question-btn button other-button" onclick="getNextQuestion()">Next
                     Question</button>
             </div>
         </div>
