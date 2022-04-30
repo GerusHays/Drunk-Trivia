@@ -42,7 +42,10 @@ function getNewRecipe() {
       for (var i = 0; i < 1; i++) {
         drinkDisplay.textContent = data.drinks[0].strDrink;
       }
-      localStorage.setItem('drink-name', document.getElementById('drink-name').value);
+      localStorage.setItem('drink-name',currentDrink.drinks[0].strDrink);
+      localStorage.setItem('instructions', currentDrink.drinks[0].strInstructions);
+      localStorage.setItem('cocktail-photo', currentDrink.drinks[0].strDrinkThumb);
+
       getrecipeApi();
       getInstruction();
       getImage();
@@ -51,6 +54,7 @@ function getNewRecipe() {
 
 
 function getrecipeApi() {
+  var ingredients = [];
   for (let i = 1; i <= 15; i++) {
     //init the next recipie ingredient string
     var drinkStr = "";
@@ -64,6 +68,7 @@ function getrecipeApi() {
     var ingredient = "strIngredient" + i;
     if (currentDrink.drinks[0][ingredient]) {
       drinkStr = drinkStr + " " + currentDrink.drinks[0][ingredient];
+      ingredients.push(drinkStr);
     }
 
     if (currentDrink.drinks[0][measure] && currentDrink.drinks[0][ingredient]) {
@@ -72,6 +77,7 @@ function getrecipeApi() {
       recipeList.appendChild(listItem);
     }
   };
+  localStorage.setItem('recipe-list', JSON.stringify(ingredients));
 };
 
 function getInstruction() {
@@ -88,6 +94,25 @@ function getImage() {
 //   getInstruction();
 //   getImage();
 // }
-getNewRecipe();
+  function getData() {
+    var drinkName = localStorage.getItem('drink-name');
+    var instructions = localStorage.getItem('instructions');
+    var photo = localStorage.getItem('cocktail-photo');
+    var ingredientsStorage = localStorage.getItem('recipe-list');
+    if(drinkName && instructions && photo && ingredientsStorage) {
+      drinkImg.setAttribute('src', photo);
+      cocktailInstructions.textContent = instructions;
+      drinkDisplay.textContent = drinkName;
+      ingredientsStorage = JSON.parse(ingredientsStorage);
+      for(var i = 0; i<ingredientsStorage.length; i++) {
+        var listItem = document.createElement('li');
+        listItem.textContent = ingredientsStorage[i];
+        recipeList.appendChild(listItem);
+      }
+    } else {
+      getNewRecipe();
+    };
+  }
+getData();
 
 //getCocktail.addEventListener('click', getApi);
