@@ -25,7 +25,7 @@ function displayDrink() {
   questionSection.style.display = "none";
   drinkInfo.style.display = "inline";
 };
-
+// generates a new recipe for the user
 function getNewRecipe() {
   drinkDisplay.textContent = "";
   recipeList.textContent = "";
@@ -42,14 +42,20 @@ function getNewRecipe() {
       for (var i = 0; i < 1; i++) {
         drinkDisplay.textContent = data.drinks[0].strDrink;
       }
+      // stores the drink variables
+      localStorage.setItem('drink-name',currentDrink.drinks[0].strDrink);
+      localStorage.setItem('instructions', currentDrink.drinks[0].strInstructions);
+      localStorage.setItem('cocktail-photo', currentDrink.drinks[0].strDrinkThumb);
+
       getrecipeApi();
       getInstruction();
       getImage();
     });
 };
 
-
+// function to get the ingredients of the user's beverage of choice
 function getrecipeApi() {
+  var ingredients = [];
   for (let i = 1; i <= 15; i++) {
     //init the next recipie ingredient string
     var drinkStr = "";
@@ -63,6 +69,7 @@ function getrecipeApi() {
     var ingredient = "strIngredient" + i;
     if (currentDrink.drinks[0][ingredient]) {
       drinkStr = drinkStr + " " + currentDrink.drinks[0][ingredient];
+      ingredients.push(drinkStr);
     }
 
     if (currentDrink.drinks[0][measure] && currentDrink.drinks[0][ingredient]) {
@@ -71,19 +78,36 @@ function getrecipeApi() {
       recipeList.appendChild(listItem);
     }
   };
+  localStorage.setItem('recipe-list', JSON.stringify(ingredients));
 };
-
+// function to get instructions on how to mix the user's drink of choice
 function getInstruction() {
   cocktailInstructions.textContent = currentDrink.drinks[0].strInstructions;
 }
-
+// function to generate image of the user's beverage of choice
 function getImage() {
   drinkImg.setAttribute("src", currentDrink.drinks[0].strDrinkThumb);
 }
-
-function saveDrink() {
-  
-}
-getNewRecipe();
+// function to save the previous drink when the user goes through the application and wants to see their drink 
+  function getData() {
+    var drinkName = localStorage.getItem('drink-name');
+    var instructions = localStorage.getItem('instructions');
+    var photo = localStorage.getItem('cocktail-photo');
+    var ingredientsStorage = localStorage.getItem('recipe-list');
+    if(drinkName && instructions && photo && ingredientsStorage) {
+      drinkImg.setAttribute('src', photo);
+      cocktailInstructions.textContent = instructions;
+      drinkDisplay.textContent = drinkName;
+      ingredientsStorage = JSON.parse(ingredientsStorage);
+      for(var i = 0; i<ingredientsStorage.length; i++) {
+        var listItem = document.createElement('li');
+        listItem.textContent = ingredientsStorage[i];
+        recipeList.appendChild(listItem);
+      }
+    } else {
+      getNewRecipe();
+    };
+  }
+getData();
 
 //getCocktail.addEventListener('click', getApi);

@@ -1,3 +1,13 @@
+// global variables
+var getCocktail = document.querySelector("#cocktail-generate-btn");
+var newCocktail = document.querySelector("#new-cocktail-btn");
+var getTrivia = document.querySelector("#trivia-btn");
+var backToDrink = document.querySelector("#back-to-drink");
+var drinkDisplay = document.querySelector("#drink-name");
+var generateDrink = document.querySelector("#generate-drink");
+var drinkInfo = document.querySelector("#drink-info");
+var recipeList = document.querySelector("#recipe-list");
+var categorySection = document.querySelector("#category-section");
 var questionSection = document.querySelector("#question-section");
 var categorySection = document.querySelector("#category-section");
 var statusBar = document.querySelector("#status-bar");
@@ -22,6 +32,21 @@ var randDrink;
 
 function getQuestions(topic) {
   fetch(triviaUrl[topic])
+// This function is for the -Trivia Time- button and -New Question- button that removes the -Drink Info- -Question Section- and displays the -Category Section-
+function chooseCategory() {
+  drinkInfo.style.display = "none";
+  questionSection.style.display = "none";
+  categorySection.style.display = "inline";
+};
+// This function is for the -Category- buttons that removes the -Category Section- and displays the -Question Section-
+function getQuestion() {
+  categorySection.style.display = "none";
+  questionSection.style.display = "flex";
+};
+// function to generate questions based on the vehicle category
+function getVehicleQuestion() {
+  vehicleUrl = "https://opentdb.com/api.php?amount=2&category=28&type=multiple";
+  fetch(vehicleUrl)
     .then(function (response) {
       return response.json();
     })
@@ -32,8 +57,8 @@ function getQuestions(topic) {
         formatQuiz()
         getNextQuestion();
         console.log(questionData);
-      })
-      ;
+      });
+  }
 };
 
 function formatQuiz(params) {
