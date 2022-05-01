@@ -1,3 +1,4 @@
+//please work
 var questionSection = document.querySelector("#question-section");
 var categorySection = document.querySelector("#category-section");
 var statusBar = document.querySelector("#status-bar");
