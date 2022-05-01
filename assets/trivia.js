@@ -10,7 +10,7 @@ var subject = document.querySelector("#subject");
 var drinks = document.querySelector("#drinks");
 var score = document.querySelector("#score");
 
-var triviaUrl = ["https://opentdb.com/api.php?amount=5&category=28&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=5&category=21&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=5&category=24&difficulty=medium&type=multiple"]
+var triviaUrl = ["https://opentdb.com/api.php?amount=10&category=28&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=5&category=21&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=5&category=24&difficulty=medium&type=multiple"]
 var questionData;
 var questionCount = 0;
 var questionComplete = false;
@@ -60,8 +60,13 @@ function getNextQuestion() {
         }
       }
       
-        //setting the question
-      questionText.textContent = questionData.results[questionCount].question;
+      //removing "/' special codes
+      var questionString = questionData.results[questionCount].question;
+      questionString = questionString.replace(/&#039;/g , "'");
+      questionString = questionString.replace(/&quot;/g , "\"");
+      //setting the question
+        console.log(questionString);
+        questionText.textContent = questionString;
       //selecting and placing what will be the correct answer
       correctLocation = Math.floor(Math.random() * 4);
       if (correctLocation == 0) {
