@@ -21,6 +21,7 @@ Once they complete 5 questions they will be given a score of how they did and ca
 * HTML
 * CSS
 * JS
+* Server APIs
 
 ## Team cohesion
 ### Our Team consists of the following Developers:
