@@ -10,7 +10,7 @@ var subject = document.querySelector("#subject");
 var drinks = document.querySelector("#drinks");
 var score = document.querySelector("#score");
 
-var triviaUrl = ["https://opentdb.com/api.php?amount=10&category=28&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=5&category=21&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=5&category=24&difficulty=medium&type=multiple"]
+var triviaUrl = ["https://opentdb.com/api.php?amount=5&category=28&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=5&category=21&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=5&category=24&difficulty=medium&type=multiple"]
 var questionData;
 var questionCount = 0;
 var questionComplete = false;
@@ -41,8 +41,8 @@ function formatQuiz(params) {
   categorySection.classList.add("hidden");
   statusBar.classList.remove("hidden");
   subject.textContent = "Current Category: " + questionData.results[0].category;
-  drinks.textContent = "Drinks: "
-  score.textContent = "Score: "
+  drinks.textContent = "Drinks: 0"
+  score.textContent = "Score: 0"
 };
 
 function getNextQuestion() {
@@ -69,20 +69,26 @@ function getNextQuestion() {
         questionText.textContent = questionString;
       //selecting and placing what will be the correct answer
       correctLocation = Math.floor(Math.random() * 4);
+      var correctString = questionData.results[questionCount].correct_answer;
+      correctString = correctString.replace(/&#039;/g , "'");
+      correctString = correctString.replace(/&quot;/g , "\"");
       if (correctLocation == 0) {
-        answerBtn0.textContent = questionData.results[questionCount].correct_answer;
+        answerBtn0.textContent = correctString;
       } else if (correctLocation == 1) {
-        answerBtn1.textContent = questionData.results[questionCount].correct_answer;
+        answerBtn1.textContent = correctString;
       } else if (correctLocation == 2){
-        answerBtn2.textContent = questionData.results[questionCount].correct_answer;
+        answerBtn2.textContent = correctString;
       } else {
-        answerBtn3.textContent = questionData.results[questionCount].correct_answer;
+        answerBtn3.textContent = correctString;
       }
       //placing all incorrect answers
       var placed = 0;
       for (let i = 0; i < 4; i++) {
         if (i !== correctLocation) {
-          testBox(i).textContent = questionData.results[questionCount].incorrect_answers[placed];
+          var currentSting = questionData.results[questionCount].incorrect_answers[placed];
+          currentSting = currentSting.replace(/&#039;/g , "'");
+          currentSting = currentSting.replace(/&quot;/g , "\"");
+          testBox(i).textContent = currentSting;
           placed++;
         }
         

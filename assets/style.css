@@ -188,9 +188,9 @@ h2 {
 .question-section {
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
     width: 95%;
+    justify-content: center;
 }
 .question {
     text-align: center;
@@ -200,6 +200,11 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    width: 100%;
+}
+.answer-btn {
+    width: 45%;
+    margin: 2.5% 0;
 }
 .other-button {
     height: 75px;
