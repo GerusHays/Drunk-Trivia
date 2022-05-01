@@ -8,7 +8,6 @@ var generateDrink = document.querySelector("#generate-drink");
 var drinkInfo = document.querySelector("#drink-info");
 var recipeList = document.querySelector("#recipe-list");
 var categorySection = document.querySelector("#category-section");
-//please work
 var questionSection = document.querySelector("#question-section");
 var categorySection = document.querySelector("#category-section");
 var statusBar = document.querySelector("#status-bar");
