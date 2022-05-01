@@ -4,20 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/age-verify-style.css" />
+
     <title>Drunk Trivia</title>
 </head>
 <body>
     <header>
         <h1><span class="header-style">||</span> Drunk Trivia <span class="header-style">||</span></h1>
     </header>
-    <section>
-        <div id="age-verify-box">
-            <div class="verification-form">
-                <h2>Are you 21 years of age or older?</h2>
+    <section class="">
+        <div class="has-text-white " id="age-verify-box">
+            <div class=" verification-form">
+                <h2 class="card-header-icon">Are you 21 years of age or older?</h2>
                 <!-- Added buttons for if the user is of age they will be presented with the Application and if they are not they will be taken to a reddit page to get a fake ID to play the game -->
-                <button type="submit" class="submit-btn-yes" onclick="window.location='./home.html';">Yes</button>
-                <button type="submit" class="submit-btn-no"
+                <button type="submit" class="submit-btn-yes modal-card" onclick="window.location='./home.html';">Yes</button>
+                <button type="submit" class="submit-btn-no modal-card"
                     onclick="window.location='https://www.reddit.com/r/PhakeIDs/';">No</button>
             </div>
         </div>
