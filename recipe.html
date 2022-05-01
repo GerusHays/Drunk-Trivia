@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Add online styles here -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/style.css" />
     <title>Drunk Trivia Home</title>
     <link rel="stylesheet" href="./assets/age-verify-style.css" />
@@ -20,16 +21,16 @@
     <!-- Generate Question and Recipe Section -->
     <div id="drink-info" class="drink-info">
         <div class="drink-card">
-            <h2>Your Drink For This Round:</h2>
-            <h3 id="drink-name" class="drink-name"></h3>
-            <ol id="recipe-list" class="recipe-list">Ingredients:</ol>
-            <button id="new-cocktail-btn" class="new-cocktail-btn button" onclick="getNewRecipe()">New Cocktail</button>
+            <h2 class="has-text-white">Your Drink For This Round:</h2>
+            <h3 id="drink-name" class="drink-name has-text-white"></h3>
+            <ol id="recipe-list" class="recipe-list has-text-white">Ingredients:</ol>
+            <button id="new-cocktail-btn" class="new-cocktail-btn button is-large is-rounded is-responsive has-text-white" onclick="getNewRecipe()">New Cocktail</button>
         </div>
         <!-- card for image and next drink -->
         <div class="photo-card" > 
             <img src=" " class="cocktail-photo" id="cocktail-photo" alt="">  
-            <p id="instructions" class="instructions"></p>
-            <a href="./trivia.html"><button id="trivia-btn" class="trivia-btn button" onclick="">Trivia Time!</button></a>
+            <p id="instructions" class="instructions has-text-white"></p>
+            <a href="./trivia.html"><button id="trivia-btn" class="trivia-btn button is-large is-rounded is-responsive" onclick="">Trivia Time!</button></a>
         </div>
     </div>
 
