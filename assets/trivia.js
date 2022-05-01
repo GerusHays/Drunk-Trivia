@@ -41,7 +41,6 @@ function getQuestions(topic) {
       .then(function () {
         formatQuiz()
         getNextQuestion();
-        console.log(questionData);
       })
       ;
 };
@@ -53,6 +52,9 @@ function formatQuiz(params) {
   subject.textContent = "Current Category: " + questionData.results[0].category;
   drinks.textContent = "Drinks: 0"
   score.textContent = "Score: 0"
+  localStorage.removeItem("finalScore");
+  localStorage.removeItem("finalDrinks");
+  localStorage.removeItem("category");
 };
 
 function getNextQuestion() {
@@ -75,7 +77,6 @@ function getNextQuestion() {
       questionString = questionString.replace(/&#039;/g , "'");
       questionString = questionString.replace(/&quot;/g , "\"");
       //setting the question
-        console.log(questionString);
         questionText.textContent = questionString;
       //selecting and placing what will be the correct answer
       correctLocation = Math.floor(Math.random() * 4);
@@ -106,8 +107,10 @@ function getNextQuestion() {
       questionCount++;
     }
   } else {
-    //end of questions
-    console.log("no more questions");
+    localStorage.setItem("finalScore", playerScore);
+    localStorage.setItem("finalDrinks", playerDrinks);
+    localStorage.setItem("category", questionData.results[0].category);
+    window.location.href = "./final-score.html";
   }  
 }
 //check the answer to see if it is correct
