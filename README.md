@@ -22,6 +22,7 @@ Once they complete 5 questions they will be given a score of how they did and ca
 * CSS
 * JS
 * Server APIs
+* CSS Framework Bulma
 
 ## Team cohesion
 ### Our Team consists of the following Developers:
