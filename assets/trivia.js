@@ -19,7 +19,6 @@ var answerBtn3 = document.querySelector("#answer-3-btn");
 var subject = document.querySelector("#subject");
 var drinks = document.querySelector("#drinks");
 var score = document.querySelector("#score");
-
 var triviaUrl = ["https://opentdb.com/api.php?amount=5&category=28&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=5&category=21&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=5&category=24&difficulty=medium&type=multiple"]
 var questionData;
 var questionCount = 0;
@@ -30,6 +29,7 @@ var playerDrinks = 0;
 var cocktailUrl;
 var randDrink;
 
+//function to get the questions from the web api and convert them into a variable to reduce the number of api calls made to the server
 function getQuestions(topic) {
   fetch(triviaUrl[topic])
     .then(function (response) {
@@ -45,6 +45,7 @@ function getQuestions(topic) {
       ;
 };
 
+//function to remove the category selection icons and show the question section as well as initialize the values used in the game
 function formatQuiz(params) {
   questionSection.classList.remove("hidden");
   categorySection.classList.add("hidden");
@@ -57,21 +58,20 @@ function formatQuiz(params) {
   localStorage.removeItem("category");
 };
 
+//function to get the new question, randomize where the correct answer goes and then place all the answers in a spot
 function getNextQuestion() {
-  console.log(questionData.results.length);
-  console.log(questionCount);
+  //the function will not run if there are no more questions that were returned from the server
   if (questionData.results.length > questionCount) {
+    //checking to make sure the current question has been answered or that you are on the first question
     if (questionComplete == true || questionCount == 0) {
       questionComplete = false;
       //remove correct/incorrect
-      
       if (questionCount > 0){
       testBox(correctLocation).classList.remove("correct");
       for (let i = 0; i < 4; i++) {
           testBox(i).classList.remove("incorrect");
         }
       }
-      
       //removing "/' special codes
       var questionString = questionData.results[questionCount].question;
       questionString = questionString.replace(/&#039;/g , "'");
@@ -106,6 +106,7 @@ function getNextQuestion() {
       }
       questionCount++;
     }
+    //storing the scores into local storage when there are no more questions so they can be shown on final score page
   } else {
     localStorage.setItem("finalScore", playerScore);
     localStorage.setItem("finalDrinks", playerDrinks);
@@ -113,7 +114,7 @@ function getNextQuestion() {
     window.location.href = "./final-score.html";
   }  
 }
-//check the answer to see if it is correct
+//check the answer to see if it is correct or incorrect
 function checkClickedButton(button) {
   if (questionComplete == false) {
     if (correctLocation == button) {
@@ -140,5 +141,5 @@ function testBox(number) {
  function hideQestions () {
      questionSection.classList.add("hidden");
 }
-
+//hiding questions when the page is first loaded
 hideQestions();
