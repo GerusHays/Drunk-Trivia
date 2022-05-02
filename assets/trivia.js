@@ -28,6 +28,8 @@ var playerScore = 0;
 var playerDrinks = 0;
 var cocktailUrl;
 var randDrink;
+// Set correctString to a global variable
+var correctString;
 
 //function to get the questions from the web api and convert them into a variable to reduce the number of api calls made to the server
 function getQuestions(topic) {
@@ -76,13 +78,17 @@ function getNextQuestion() {
       var questionString = questionData.results[questionCount].question;
       questionString = questionString.replace(/&#039;/g , "'");
       questionString = questionString.replace(/&quot;/g , "\"");
+      questionString = questionString.replace(/&eacute;/g , "é");
+      questionString = questionString.replace(/&ouml;/g , "ö");
       //setting the question
         questionText.textContent = questionString;
       //selecting and placing what will be the correct answer
       correctLocation = Math.floor(Math.random() * 4);
-      var correctString = questionData.results[questionCount].correct_answer;
+      correctString = questionData.results[questionCount].correct_answer;
       correctString = correctString.replace(/&#039;/g , "'");
       correctString = correctString.replace(/&quot;/g , "\"");
+      correctString = correctString.replace(/&eacute;/g , "é");
+      correctString = correctString.replace(/&ouml;/g , "ö");
       if (correctLocation == 0) {
         answerBtn0.textContent = correctString;
       } else if (correctLocation == 1) {
@@ -96,10 +102,10 @@ function getNextQuestion() {
       var placed = 0;
       for (let i = 0; i < 4; i++) {
         if (i !== correctLocation) {
-          var currentSting = questionData.results[questionCount].incorrect_answers[placed];
-          currentSting = currentSting.replace(/&#039;/g , "'");
-          currentSting = currentSting.replace(/&quot;/g , "\"");
-          testBox(i).textContent = currentSting;
+          var currentString = questionData.results[questionCount].incorrect_answers[placed];
+          currentString = currentString.replace(/&#039;/g , "'");
+          currentString = currentString.replace(/&quot;/g , "\"");
+          testBox(i).textContent = currentString;
           placed++;
         }
         
@@ -124,7 +130,12 @@ function checkClickedButton(button) {
   
     } else {
       for (let i = 0; i < 4; i++) {
-        testBox(i).classList.add("incorrect");
+        var currentBox = testBox(i)
+        if (currentBox.textContent == correctString) {
+          currentBox.classList.add("correct");
+        } else {
+          currentBox.classList.add("incorrect");
+        }
       }
       playerDrinks = playerDrinks + 1;
       drinks.textContent = "Drinks: " + playerDrinks;
