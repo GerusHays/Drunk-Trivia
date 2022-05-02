@@ -35,10 +35,8 @@ function getNewRecipe() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data.drinks[0].strDrink);
       currentDrink = data;
       randDrink = data.drinks[0].idDrink;
-      console.log("this is your random drink: " + randDrink);
       for (var i = 0; i < 1; i++) {
         drinkDisplay.textContent = data.drinks[0].strDrink;
       }
